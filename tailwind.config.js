@@ -1,0 +1,86 @@
+const colors = require("tailwindcss/colors");
+
+module.exports = {
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+
+      black: "#000",
+      white: "#fff",
+      klexs: {
+        100: "#d4d7da",
+        200: "#a9afb6",
+        300: "#7e8791",
+        400: "#535f6d",
+        500: "#283748",
+        600: "#202c3a",
+        700: "#18212b",
+        800: "#10161d",
+        900: "#080b0e",
+      },
+      klexp: {
+        100: "#fde9d2",
+        200: "#fcd4a5",
+        300: "#fabe78",
+        400: "#f9a94b",
+        500: "#f7931e",
+        600: "#c67618",
+        700: "#945812",
+        800: "#633b0c",
+        900: "#311d06",
+      },
+      klex: {
+        100: "#d3d6da",
+        200: "#a7aeb6",
+        300: "#7b8591",
+        400: "#4f5d6d",
+        500: "#233448",
+        600: "#1c2a3a",
+        700: "#151f2b",
+        800: "#0e151d",
+        900: "#070a0e",
+      },
+      amber: colors.amber,
+      blue: colors.blue,
+      cyan: colors.cyan,
+      emerald: colors.emerald,
+      fuchsia: colors.fuchsia,
+      gray: colors.coolGray,
+      green: colors.green,
+      indigo: colors.indigo,
+      "light-blue": colors.lightBlue,
+      lime: colors.lime,
+      orange: {
+        ...colors.orange,
+        1000: "#4a2008",
+      },
+      pink: {
+        ...colors.pink,
+        1000: "#460d25",
+      },
+      purple: colors.purple,
+      red: colors.red,
+      rose: colors.rose,
+      teal: colors.teal,
+      violet: colors.violet,
+      yellow: colors.yellow,
+
+      code: {
+        punctuation: "#A1E8FF",
+        tag: "#D58FFF",
+        "attr-name": "#4BD0FB",
+        "attr-value": "#A2F679",
+        string: "#A2F679",
+        highlight: "rgba(134, 239, 172, 0.25)",
+      },
+    },
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
