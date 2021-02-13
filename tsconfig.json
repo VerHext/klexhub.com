@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/WistaEmbedComponent.tsx",
-    "next.config.js"
+    "next.config.js",
+    "src/components/ClassTable.jsx"
   ],
   "exclude": ["node_modules"]
 }

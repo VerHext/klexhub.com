@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import { useTop } from "hooks/useTop";
-import { ContentsContext } from "layouts/ContentsLayout";
-import { useContext, useEffect, useRef } from "react";
+import clsx from 'clsx'
+import { useTop } from 'hooks/useTop'
+import { ContentsContext } from 'layouts/ContentsLayout'
+import { useContext, useEffect, useRef } from 'react'
 
 export function Heading({
   level,
@@ -9,32 +9,30 @@ export function Heading({
   children,
   number,
   badge,
-  className = "",
+  className = '',
   hidden = false,
   toc = false,
   style = {},
   ...props
 }) {
-  let Component = `h${level}` as any;
-  const { registerHeading, unregisterHeading } = useContext(
-    ContentsContext
-  ) as any;
+  let Component = `h${level}` as any
+  const { registerHeading, unregisterHeading } = useContext(ContentsContext) as any
 
-  let ref = useRef();
-  let top = useTop(ref);
+  let ref = useRef()
+  let top = useTop(ref)
 
   useEffect(() => {
-    if (toc && typeof top !== "undefined") {
-      registerHeading(id, top);
+    if (toc && typeof top !== 'undefined') {
+      registerHeading(id, top)
     }
     return () => {
-      unregisterHeading(id);
-    };
-  }, [toc, top, id, registerHeading, unregisterHeading]);
+      unregisterHeading(id)
+    }
+  }, [toc, top, id, registerHeading, unregisterHeading])
 
   return (
     <Component
-      className={clsx("group flex whitespace-pre-wrap", className)}
+      className={clsx('group flex whitespace-pre-wrap', className)}
       id={id}
       ref={ref}
       style={{ ...(hidden ? { marginBottom: 0 } : {}), ...style }}
@@ -46,10 +44,10 @@ export function Heading({
           href={`#${id}`}
           className="absolute after:hash opacity-0 group-hover:opacity-100"
           style={{
-            marginLeft: "-1em",
-            paddingRight: "0.5em",
-            boxShadow: "none",
-            color: "#a1a1aa",
+            marginLeft: '-1em',
+            paddingRight: '0.5em',
+            boxShadow: 'none',
+            color: '#a1a1aa',
           }}
           aria-label="Anchor"
         />
@@ -59,12 +57,12 @@ export function Heading({
           {number}
         </span>
       )}
-      <span className={hidden ? "sr-only" : undefined}>{children}</span>
+      <span className={hidden ? 'sr-only' : undefined}>{children}</span>
       {badge && (
         <span className="ml-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium leading-4 bg-green-150 text-green-900">
           {badge}
         </span>
       )}
     </Component>
-  );
+  )
 }

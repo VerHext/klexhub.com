@@ -34,7 +34,7 @@ const fallbackDefaultExports = {
 };
 
 module.exports = withBundleAnalyzer({
-  pageExtensions: ["ts", "tsx", "mdx"],
+  pageExtensions: ["ts", "tsx", "mdx", "js", "jsx"],
   experimental: {
     modern: true,
   },
