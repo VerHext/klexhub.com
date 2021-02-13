@@ -1,0 +1,7 @@
+[
+  {
+    "source": "/impressum",
+    "destination": "/legal/impressum",
+    "permanent": false
+  }
+]

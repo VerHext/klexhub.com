@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
+import { Logo } from "../components/Logo";
 import styles from "./Footer.module.css";
-import { Logo } from "./Logo";
 const openSourceBadge =
   '<span class="text-xs bg-klexs-700 py-1 px-2 rounded-lg text-green-500 align-middle">OS</span>';
 
@@ -36,9 +36,10 @@ const footerNav = {
   Rechtliches: {
     className: "row-span-2",
     items: [
-      { title: "Impressum", href: "https://github.com/klexhub" },
-      { title: "Datenschutzerklärung", href: "https://twitter.com/KlexHub" },
+      { title: "Impressum", href: "/legal/impressum" },
+      { title: "Datenschutzerklärung", href: "/legal/datenschutz" },
       { title: "AGB", href: "https://www.youtube.com/klexhub" },
+      { title: "Branding", href: "/branding" },
     ],
   },
 
