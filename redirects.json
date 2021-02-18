@@ -5,6 +5,11 @@
     "permanent": false
   },
   {
+    "source": "/datenschutz",
+    "destination": "/legal/datenschutz",
+    "permanent": false
+  },
+  {
     "source": "/wp-admin",
     "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "permanent": false

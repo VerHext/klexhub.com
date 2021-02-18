@@ -39,23 +39,20 @@ export default function App({ Component, pageProps, router }) {
     <>
       <Title suffix="KlexHub">{meta.metaTitle || meta.title || 'KlexHub'}</Title>
       <Head>
+        <meta name="description" content={description} />
+        <meta
+          name="keywords"
+          content="software, entwicklung, jettingen, softwareunternehmen, code, website, klexhub, support-pp "
+        />
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta key="twitter:site" name="twitter:site" content="@KlexHub" />
         <meta key="twitter:description" name="twitter:description" content={description} />
-        <meta
-          key="twitter:image"
-          name="twitter:image"
-          content={`https://klexhub.com/images/KlexHubLogo.png`}
-        />
+        <meta key="twitter:image" name="twitter:image" content={`/images/KlexHubLogo.png`} />
         <meta key="twitter:creator" name="twitter:creator" content="@KlexHub" />
         <meta key="og:url" property="og:url" content={`https://klexhub.com${router.pathname}`} />
-        <meta key="og:type" property="og:type" content="article" />
+        <meta key="og:type" property="og:type" content="website" />
         <meta key="og:description" property="og:description" content={description} />
-        <meta
-          key="og:image"
-          property="og:image"
-          content={`https://klexhub.com/images/KlexHubLogo.png`}
-        />
+        <meta key="og:image" property="og:image" content={`/images/KlexHubLogo.png`} />
       </Head>
       <div className="prose"></div>
       <Header />
