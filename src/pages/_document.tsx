@@ -1,4 +1,6 @@
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
+// Can import sass file this way
+// Or as an import in one of your sass files with other third party sass files
 
 export default class Document extends NextDocument {
   static async getInitialProps(ctx) {

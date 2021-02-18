@@ -34,6 +34,7 @@ export default function App({ Component, pageProps, router }) {
   if (router.pathname.startsWith('/examples/')) {
     return <Component {...pageProps} />
   }
+  // import optional styles
 
   return (
     <>
