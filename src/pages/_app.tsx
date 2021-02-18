@@ -26,7 +26,10 @@ export default function App({ Component, pageProps, router }) {
     ? { layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen }
     : {}
   const meta = Component.layoutProps?.meta || {}
-  const description = meta.metaDescription || meta.description || 'Documentation for KlexHub'
+  const description =
+    meta.metaDescription ||
+    meta.description ||
+    'KlexHub entwickelt kundenspezifische Software, digitale Lösungen die begeistern. Fordern Sie jetzt ein unverbindliches Angebot ein.'
 
   if (router.pathname.startsWith('/examples/')) {
     return <Component {...pageProps} />
@@ -39,12 +42,20 @@ export default function App({ Component, pageProps, router }) {
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta key="twitter:site" name="twitter:site" content="@KlexHub" />
         <meta key="twitter:description" name="twitter:description" content={description} />
-        <meta key="twitter:image" name="twitter:image" content={`https://klexhub.com${'TODO'}`} />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={`https://klexhub.com/images/KlexHubLogo.png`}
+        />
         <meta key="twitter:creator" name="twitter:creator" content="@KlexHub" />
         <meta key="og:url" property="og:url" content={`https://klexhub.com${router.pathname}`} />
         <meta key="og:type" property="og:type" content="article" />
         <meta key="og:description" property="og:description" content={description} />
-        <meta key="og:image" property="og:image" content={`https://klexhub.com${'TODO'}`} />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={`https://klexhub.com/images/KlexHubLogo.png`}
+        />
       </Head>
       <div className="prose"></div>
       <Header />
