@@ -2,6 +2,9 @@ version: '3'
 services:
   nextjs:
     build: ./
+    environment:
+     - AWS_ACCESS_KEY_ID_MYAPP=${AWS_ACCESS_KEY_ID_MYAPP}
+     - AWS_SECRET_ACCESS_KEY_MYAPP=${AWS_SECRET_ACCESS_KEY_MYAPP}
   nginx:
     build: ./nginx
     ports:
