@@ -1,13 +1,8 @@
 import axios from 'axios'
-import 'froala-editor/css/froala_editor.pkgd.min.css'
-import 'froala-editor/css/froala_style.min.css'
-import dynamic from 'next/dynamic'
 import React, { useState } from 'react'
+import SunEditor from 'suneditor-react'
+import 'suneditor/dist/css/suneditor.min.css' // Import Sun Editor's CSS File
 import { validateEmail } from 'utils/validate'
-
-const FroalaEditorComponent = dynamic(import('react-froala-wysiwyg'), {
-  ssr: false,
-})
 
 export interface FormData {
   company_name: string
@@ -145,7 +140,7 @@ export default function Angebot() {
         <div className="formItem py-3">
           <label id="budget">Budget</label>
           <select
-            value={data?.company_name}
+            value={data?.budget}
             onChange={(e) => onChangeInput('budget', e?.target?.value)}
             className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
           >
@@ -161,14 +156,17 @@ export default function Angebot() {
         </div>
         <div className="formItem py-3"></div>
         <label>Projektbeschreibung</label>
-        <FroalaEditorComponent
-          tag="textarea"
-          onModelChange={(e) => onChangeInput('description_project', e)}
-          config={{
-            height: 300,
-            placeholderText: 'Hier können Sie Ihr Projekt beschreiben!',
-          }}
-        />
+
+        <div className="border border-gray-300 bg-white ">
+          <SunEditor
+            defaultValue={data?.description_project}
+            height="350"
+            setDefaultStyle=" font-size: 15px;"
+            placeholder="Beschreiben Sie Ihr Projekt..."
+            onChange={(e) => onChangeInput('description_project', e)}
+          />
+        </div>
+
         <div className="py-8">
           <button
             onClick={onSubmit}

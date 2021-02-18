@@ -18,15 +18,15 @@ export default function Home() {
               vereinfachen oder ausgefallene digitale Kommunikationsideen erlebbar zu machen.
               <br />
               <br />
-              Durch einsatz neuster Technologie sind sie nicht nur up-to-date sondern auch Ihrer
+              Durch Einsatz neuster Technologie sind Sie nicht nur up-to-date sondern auch Ihrer
               Konkurenz einen Schritt vorraus.
               <br />
               <br />
-              Fordern Sie Ihr unverbindlichen Angebot an.
+              Fordern Sie Ihr unverbindliches Angebot an.
             </p>
             <button
               onClick={() => {
-                Router.push('/contact')
+                Router.push('/angebot')
               }}
               className="rounded-sm text-white bg-klexp-500 px-4 py-2 my-3 hover:bg-klexp-600 focus:outline-none"
             >
@@ -52,7 +52,7 @@ export default function Home() {
               <p className="text-black">
                 Teilen Sie uns Details über Ihr Projekt mit. Vom Funktionsumfang bis hin zum Budget.
                 Durch unsere jahrelange Erfahrung in der Softwareentwicklung unterbreiten wir Ihnen
-                gerne ein unvernindliches und zugleich attraktives Festpreisangebot.
+                gerne ein unverbindliches und zugleich attraktives Festpreisangebot.
                 <Link href="/angebot">
                   <a
                     className="pt-2 inline-flex text-md sm:text-md font-medium transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-current focus:outline-none rounded-md text-klexp-500 hover:text-klexp-600"
@@ -112,12 +112,12 @@ export default function Home() {
                 <h3 className="text-klexp-500 text-xl mb-5 uppercase">4. Entwicklung</h3>
                 <h1 className="text-black text-4xl mb-5">Let`s hacking!</h1>
                 <p className="text-black">
-                  Wir sind schnell und zuverlässig in der Entwicklung. Durch den einsatz neuster
+                  Wir sind schnell und zuverlässig in der Entwicklung. Durch den Einsatz neuster
                   Technologien und Frameworks, sind wir Ihrer Konkurenz mindesten einem Schritt
                   vorraus!
                   <br />
                   <br />
-                  Überzeuchen Sie sich selbst von unseren Ergebnisen
+                  Überzeuchen Sie sich selbst von unseren Ergebnissen
                   <br />
                   <Link href="/lets-hacking">
                     <a
@@ -136,8 +136,8 @@ export default function Home() {
               <h3 className="text-klexp-500 text-xl mb-5 uppercase">5. Fertigstellung</h3>
               <h1 className="text-black text-4xl mb-5">Hey, Fertig!</h1>
               <p className="text-black">
-                In einer rasenden Geschwinndigkeit und im Rahmen des Angebotes, stellen wir Ihr
-                Projekt fertig. Nach ausführlichen Test erhalten Sie die Software und eine passende
+                In einer rasenden Geschwindigkeit und im Rahmen des Angebotes, stellen wir Ihr
+                Projekt fertig. Nach ausführlichen Tests erhalten Sie die Software und eine passende
                 Dokumentation von uns ausgeliefert. Bilder sagen mehr als tausende Worte, nach
                 diesem Motto ergänzen wir die Dokumentation gerne mit Videos.
                 <br />
