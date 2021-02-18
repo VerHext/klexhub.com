@@ -25,7 +25,7 @@ export default function submitAngebot(req, res) {
   try {
     sendIncommingPassEmail(req)
   } catch (e) {}
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json({ oke: true })
 }
 
 const sendEmail = (req) => {

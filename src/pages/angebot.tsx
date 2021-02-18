@@ -18,13 +18,7 @@ export default function Angebot() {
   const [data, setData] = useState<FormData>()
   const [submitted, setSubmitted] = useState<boolean>(false)
 
-  const onChangeInput = (key: string, value: string) => {
-    console.log(key, value)
-    setData({ ...data, [key]: value.toString() })
-  }
-
   const onSubmit = () => {
-    console.log(data)
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -88,7 +82,7 @@ export default function Angebot() {
               <label className="">Name Ihres Unternehmens</label>
               <input
                 value={data?.company_name}
-                onChange={(e) => onChangeInput('company_name', e?.target?.value)}
+                onChange={(e) => setData({ ...data, company_name: e?.target?.value })}
                 type="text"
                 placeholder="StartUp GmbH"
                 className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
@@ -98,7 +92,7 @@ export default function Angebot() {
               <label className="">E-Mail</label>
               <input
                 value={data?.email}
-                onChange={(e) => onChangeInput('email', e?.target?.value)}
+                onChange={(e) => setData({ ...data, email: e?.target?.value })}
                 required
                 type="email"
                 placeholder="hello@startup.com"
@@ -109,7 +103,7 @@ export default function Angebot() {
               <label className="">Telefonnummer</label>
               <input
                 value={data?.phone}
-                onChange={(e) => onChangeInput('phone', e?.target?.value)}
+                onChange={(e) => setData({ ...data, phone: e?.target?.value })}
                 type="phone"
                 placeholder="08225 7989000"
                 className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
@@ -120,7 +114,7 @@ export default function Angebot() {
               <label className="">Titel Ihres Projektes</label>
               <input
                 value={data?.title_project}
-                onChange={(e) => onChangeInput('title_project', e?.target?.value)}
+                onChange={(e) => setData({ ...data, title_project: e?.target?.value })}
                 type="text"
                 placeholder="App für unser Pizzalokal"
                 className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
@@ -130,7 +124,7 @@ export default function Angebot() {
               <label id="budget">Budget</label>
               <select
                 value={data?.budget}
-                onChange={(e) => onChangeInput('budget', e?.target?.value)}
+                onChange={(e) => setData({ ...data, budget: e?.target?.value })}
                 className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
               >
                 <option value="800">{'Kleines Projekt < 800€'}</option>
@@ -152,7 +146,7 @@ export default function Angebot() {
                 height="350"
                 setDefaultStyle=" font-size: 15px;"
                 placeholder="Beschreiben Sie Ihr Projekt..."
-                onChange={(e) => onChangeInput('description_project', e)}
+                onChange={(e) => setData({ ...data, description_project: e })}
               />
             </div>
             <div className="py-8">
