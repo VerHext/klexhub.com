@@ -1,2 +1,2 @@
 # klexhub.com
-Website
+Website with auto deploy
