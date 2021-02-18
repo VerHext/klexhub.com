@@ -1,58 +1,72 @@
-import clsx from "clsx";
-import Link from "next/link";
-import { Logo } from "../components/Logo";
-import styles from "./Footer.module.css";
+import clsx from 'clsx'
+import Link from 'next/link'
+import { Logo } from '../components/Logo'
+import styles from './Footer.module.css'
 const openSourceBadge =
-  '<span class="text-xs bg-klexs-700 py-1 px-2 rounded-lg text-green-500 align-middle">OS</span>';
+  '<span class="text-xs bg-klexs-700 py-1 px-2 rounded-lg text-green-500 align-middle">OS</span>'
 
 const footerNav = {
   Produkte: {
-    className: "row-span-2",
+    className: 'row-span-2',
     items: [
       {
-        title: "KlexHealth",
+        title: 'KlexHealth',
         blank: true,
-        href: "https://klexhealth.com",
+        href: 'https://klexhealth.com',
       },
       {
-        title: "Support++ " + openSourceBadge,
+        title: 'Support++ ' + openSourceBadge,
         isHtml: true,
         blank: true,
-        href: "https://support-pp.de",
+        href: 'https://support-pp.de',
       },
     ],
   },
-  "Was wir machen": {
-    className: "row-span-2",
+  'KlexHub Entwicklung': {
+    className: 'row-span-2',
     items: [
       {
-        title: "KlexHealth",
-        blank: true,
-        href: "https://klexhealth.com",
+        title: 'Angebot',
+        blank: false,
+        href: '/angebot',
+      },
+      {
+        title: 'Beratung',
+        blank: false,
+        href: '/beratung',
+      },
+      {
+        title: 'Projekte',
+        blank: false,
+        href: '/finish-project',
+      },
+      {
+        title: 'Kontakt',
+        blank: false,
+        href: '/contact',
       },
     ],
   },
 
   Rechtliches: {
-    className: "row-span-2",
+    className: 'row-span-2',
     items: [
-      { title: "Impressum", href: "/legal/impressum" },
-      { title: "Datenschutzerklärung", href: "/legal/datenschutz" },
-      { title: "AGB", href: "https://www.youtube.com/klexhub" },
-      { title: "Branding", href: "/branding" },
+      { title: 'Impressum', href: '/legal/impressum' },
+      { title: 'Datenschutzerklärung', href: '/legal/datenschutz' },
+      { title: 'Branding', href: '/branding' },
     ],
   },
 
   Kontakt: {
-    className: "row-span-2",
+    className: 'row-span-2',
     items: [
-      { title: "GitHub", href: "https://github.com/klexhub" },
-      { title: "Twitter", href: "https://twitter.com/KlexHub" },
-      { title: "YouTube", href: "https://www.youtube.com/klexhub" },
-      { title: "Instagram", href: "https://www.instagram.com/klexhub" },
+      { title: 'GitHub', href: 'https://github.com/klexhub' },
+      { title: 'Twitter', href: 'https://twitter.com/KlexHub' },
+      { title: 'YouTube', href: 'https://www.youtube.com/channel/UCoqOO8slt5LNM0iNMXaCg8Q' },
+      { title: 'Instagram', href: 'https://www.instagram.com/klexhub' },
     ],
   },
-};
+}
 
 export function Footer() {
   return (
@@ -62,10 +76,7 @@ export function Footer() {
           className={`${styles.nav} text-sm font-medium pb-14 sm:pb-20 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10`}
         >
           {Object.keys(footerNav).map((section, i) => (
-            <li
-              key={section}
-              className={clsx("space-y-5", footerNav[section].className)}
-            >
+            <li key={section} className={clsx('space-y-5', footerNav[section].className)}>
               <h2 className="text-xs font-semibold tracking-wide text-klexorange-500 uppercase">
                 {section}
               </h2>
@@ -74,10 +85,10 @@ export function Footer() {
                   <li key={item.href}>
                     <Link href={item.href}>
                       <a
-                        target={item?.blank ? "_blank" : ""}
+                        target={item?.blank ? '_blank' : ''}
                         className="hover:text-klexorange-300 text-gray-300 transition-colors duration-200"
                       >
-                        {!item?.isHtml ? item.title : ""}
+                        {!item?.isHtml ? item.title : ''}
                         <div
                           dangerouslySetInnerHTML={{
                             __html: item?.isHtml ? item?.title : null,
@@ -93,11 +104,9 @@ export function Footer() {
         </ul>
         <div className="pt-10 sm:pt-12">
           <Logo width="200" />
-          <div className="text-white text-xs pt-4">
-            © 2019-2021 KlexHub UG (haftungsbeschränkt)
-          </div>
+          <div className="text-white text-xs pt-4">© 2019-2021 KlexHub UG (haftungsbeschränkt)</div>
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -73,19 +73,32 @@ export function Header() {
               <div className="ml-3 relative h-full">
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    <a href="#" className={headerItemClass}>
-                      Entwicklung
-                    </a>
-                    <a href="#" className={headerItemClass}>
-                      Lösungen
-                    </a>
+                    <Link href="/lets-hacking">
+                      <a href="/lets-hacking" className={headerItemClass}>
+                        Entwicklung
+                      </a>
+                    </Link>
+                    <Link href="/angebot">
+                      <a href="/angebot" className={headerItemClass}>
+                        Angebot
+                      </a>
+                    </Link>
+                    <Link href="/beratung">
+                      <a href="/beratung" className={headerItemClass}>
+                        Beratung
+                      </a>
+                    </Link>
 
-                    <a href="#" className={headerItemClass}>
-                      Produkte
-                    </a>
-                    <a href="#" className={headerItemClass}>
-                      Kontakt
-                    </a>
+                    <Link href="/finish-project">
+                      <a href="/contact" className={headerItemClass}>
+                        Projekte
+                      </a>
+                    </Link>
+                    <Link href="/contact">
+                      <a href="/contact" className={headerItemClass}>
+                        Kontakt
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -3,6 +3,7 @@ import Router from 'next/dist/next-server/lib/router/router'
 import Head from 'next/head'
 import React, { Fragment, useEffect, useState } from 'react'
 import { Title } from '../components/Title'
+import '../css/extracss.css'
 import '../css/globals.css'
 import { Footer } from '../layouts/Footer'
 
@@ -33,7 +34,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <Title suffix="KlexHub">{meta.metaTitle || meta.title}</Title>
+      <Title suffix="KlexHub">{meta.metaTitle || meta.title || 'KlexHub'}</Title>
       <Head>
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta key="twitter:site" name="twitter:site" content="@KlexHub" />

@@ -1,0 +1,11 @@
+#fr-logo {
+  display: none !important;
+}
+.fr-toolbar {
+  border-radius: none;
+  -webkit-border-radius: 0px !important;
+}
+.fr-second-toolbar {
+  border: none !important;
+  border-bottom-color: none;
+}
