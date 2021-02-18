@@ -19,6 +19,7 @@
     "@sindresorhus/slugify": "^1.1.0",
     "@svgr/webpack": "^5.4.0",
     "@tailwindcss/typography": "^0.0.0-caa70b6",
+    "@tinymce/tinymce-react": "^3.10.1",
     "autoprefixer": "^10.0.2",
     "aws-sdk": "^2.843.0",
     "axios": "^0.21.1",

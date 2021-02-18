@@ -1,6 +1,6 @@
+import { Editor } from '@tinymce/tinymce-react'
 import axios from 'axios'
-import React, { useState } from 'react'
-import SunEditor from 'suneditor-react'
+import React, { useEffect, useState } from 'react'
 import 'suneditor/dist/css/suneditor.min.css' // Import Sun Editor's CSS File
 import { validateEmail } from 'utils/validate'
 
@@ -15,15 +15,28 @@ export interface FormData {
 
 export default function Angebot() {
   const [error, setError] = useState<{ error: boolean; message: string }>()
-  const [data, setData] = useState<FormData>()
+  const [data, setData] = useState<FormData>({
+    budget: '800',
+    company_name: '',
+    description_project: '',
+    email: '',
+    title_project: '',
+    phone: '',
+  })
   const [submitted, setSubmitted] = useState<boolean>(false)
 
+  useEffect(() => {
+    console.dir(data)
+  }, [data])
+
   const onSubmit = () => {
+    const d = data
+    console.log(d)
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     })
-    setError({ error: false, message: '' })
+
     if (!validateEmail(data?.email)) {
       setError({
         error: true,
@@ -54,7 +67,7 @@ export default function Angebot() {
     }
 
     //Send form to backend.
-    axios.post('/api/angebot', data).then(console.log).catch(console.error)
+    axios.post('/api/angebot', d).then(console.log).catch(console.error)
 
     setError({
       error: false,
@@ -81,7 +94,6 @@ export default function Angebot() {
             <div className="formItem py-3">
               <label className="">Name Ihres Unternehmens</label>
               <input
-                value={data?.company_name}
                 onChange={(e) => setData({ ...data, company_name: e?.target?.value })}
                 type="text"
                 placeholder="StartUp GmbH"
@@ -91,7 +103,6 @@ export default function Angebot() {
             <div className="formItem py-3">
               <label className="">E-Mail</label>
               <input
-                value={data?.email}
                 onChange={(e) => setData({ ...data, email: e?.target?.value })}
                 required
                 type="email"
@@ -102,7 +113,6 @@ export default function Angebot() {
             <div className="formItem py-3">
               <label className="">Telefonnummer</label>
               <input
-                value={data?.phone}
                 onChange={(e) => setData({ ...data, phone: e?.target?.value })}
                 type="phone"
                 placeholder="08225 7989000"
@@ -113,7 +123,6 @@ export default function Angebot() {
             <div className="formItem py-3">
               <label className="">Titel Ihres Projektes</label>
               <input
-                value={data?.title_project}
                 onChange={(e) => setData({ ...data, title_project: e?.target?.value })}
                 type="text"
                 placeholder="App für unser Pizzalokal"
@@ -123,7 +132,6 @@ export default function Angebot() {
             <div className="formItem py-3">
               <label id="budget">Budget</label>
               <select
-                value={data?.budget}
                 onChange={(e) => setData({ ...data, budget: e?.target?.value })}
                 className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
               >
@@ -141,12 +149,44 @@ export default function Angebot() {
             <label>Projektbeschreibung</label>
 
             <div className="border border-gray-300 bg-white ">
-              <SunEditor
-                defaultValue={data?.description_project}
-                height="350"
-                setDefaultStyle=" font-size: 15px;"
-                placeholder="Beschreiben Sie Ihr Projekt..."
-                onChange={(e) => setData({ ...data, description_project: e })}
+              <Editor
+                apiKey="c96mccvud9k0kxo3w1d4ascqq2cojwfe0f68k7my1m1te5fc"
+                init={{
+                  menubar: 'view edit insert format table',
+                  menu: {
+                    view: { title: 'View', items: 'preview | print | fullscreen' },
+                    edit: {
+                      title: 'Edit',
+                      items: 'undo redo | cut copy paste | selectall | searchreplace',
+                    },
+
+                    insert: {
+                      title: 'Insert',
+                      items:
+                        'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime',
+                    },
+                    format: {
+                      title: 'Format',
+                      items:
+                        'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align lineheight | forecolor backcolor | removeformat',
+                    },
+
+                    table: {
+                      title: 'Table',
+                      items: 'inserttable | cell row column | tableprops deletetable',
+                    },
+                  },
+                  toolbar_mode: 'floating',
+                  tinycomments_mode: 'embedded',
+                  tinycomments_author: 'KlexHub',
+                  plugins:
+                    'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
+                  toolbar:
+                    'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+                  height: 350,
+                  placeholder: 'Beschreiben Sie Ihr Projekt...',
+                }}
+                onEditorChange={(e, d) => setData({ ...data, description_project: e })}
               />
             </div>
             <div className="py-8">
