@@ -18,8 +18,7 @@ export default function Home() {
               vereinfachen oder ausgefallene digitale Kommunikationsideen erlebbar zu machen.
               <br />
               <br />
-              Durch Einsatz neuster Technologie sind Sie nicht nur up-to-date sondern auch Ihrer
-              Konkurenz einen Schritt vorraus.
+  Durch Einsatz neuster Technologie sind Sie nicht nur up-to-date, sondern auch Ihrer Konkurrenz einen Schritt voraus.
               <br />
               <br />
               Fordern Sie Ihr unverbindliches Angebot an.
