@@ -90,7 +90,7 @@ export function Header() {
                     </Link>
 
                     <Link href="/finish-project">
-                      <a href="/contact" className={headerItemClass}>
+                      <a href="/finish-project" className={headerItemClass}>
                         Projekte
                       </a>
                     </Link>
