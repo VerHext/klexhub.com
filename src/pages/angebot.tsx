@@ -1,8 +1,8 @@
+import { Editor } from '@tinymce/tinymce-react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import 'suneditor/dist/css/suneditor.min.css' // Import Sun Editor's CSS File
 import { validateEmail } from 'utils/validate'
-
 export interface FormData {
   company_name: string
   email: string
@@ -147,12 +147,45 @@ export default function Angebot() {
             <div className="formItem py-3"></div>
             <label>Projektbeschreibung</label>
 
-            <textarea
-              onChange={(e) => setData({ ...data, description_project: e?.target?.value })}
-              placeholder="Beschreiben Sie Ihr Projekt..."
-              cols={40}
-              rows={5}
-              className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
+            <Editor
+              id="editor-angebot-001"
+              apiKey="c96mccvud9k0kxo3w1d4ascqq2cojwfe0f68k7my1m1te5fc"
+              init={{
+                menubar: 'view edit insert format table',
+                menu: {
+                  view: { title: 'View', items: 'preview | print | fullscreen' },
+                  edit: {
+                    title: 'Edit',
+                    items: 'undo redo | cut copy paste | selectall | searchreplace',
+                  },
+
+                  insert: {
+                    title: 'Insert',
+                    items:
+                      'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime',
+                  },
+                  format: {
+                    title: 'Format',
+                    items:
+                      'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align lineheight | forecolor backcolor | removeformat',
+                  },
+
+                  table: {
+                    title: 'Table',
+                    items: 'inserttable | cell row column | tableprops deletetable',
+                  },
+                },
+                toolbar_mode: 'floating',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'KlexHub',
+                plugins:
+                  'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
+                toolbar:
+                  'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+                height: 350,
+                placeholder: 'Beschreiben Sie Ihr Projekt...',
+              }}
+              onEditorChange={(e, d) => setData({ ...data, description_project: e })}
             />
 
             <div className="py-8">
@@ -169,46 +202,3 @@ export default function Angebot() {
     </div>
   )
 }
-
-/**
- *  <Editor
-                id="editor-angebot-001"
-                apiKey="c96mccvud9k0kxo3w1d4ascqq2cojwfe0f68k7my1m1te5fc"
-                init={{
-                  menubar: 'view edit insert format table',
-                  menu: {
-                    view: { title: 'View', items: 'preview | print | fullscreen' },
-                    edit: {
-                      title: 'Edit',
-                      items: 'undo redo | cut copy paste | selectall | searchreplace',
-                    },
-
-                    insert: {
-                      title: 'Insert',
-                      items:
-                        'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime',
-                    },
-                    format: {
-                      title: 'Format',
-                      items:
-                        'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align lineheight | forecolor backcolor | removeformat',
-                    },
-
-                    table: {
-                      title: 'Table',
-                      items: 'inserttable | cell row column | tableprops deletetable',
-                    },
-                  },
-                  toolbar_mode: 'floating',
-                  tinycomments_mode: 'embedded',
-                  tinycomments_author: 'KlexHub',
-                  plugins:
-                    'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
-                  toolbar:
-                    'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
-                  height: 350,
-                  placeholder: 'Beschreiben Sie Ihr Projekt...',
-                }}
-                onEditorChange={(e, d) => setData({ ...data, description_project: e })}
-              />
- */
