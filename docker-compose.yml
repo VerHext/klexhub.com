@@ -6,6 +6,7 @@ services:
       - AWS_ACCESS_KEY_ID_MYAPP=${AWS_ACCESS_KEY_ID_MYAPP}
       - AWS_SECRET_ACCESS_KEY_MYAPP=${AWS_SECRET_ACCESS_KEY_MYAPP}
       - DISCORD_WEBHOOK=${DISCORD_WEBHOOK}
+
   nginx:
     build: ./nginx
     ports:

@@ -150,6 +150,7 @@ export default function Angebot() {
 
             <div className="border border-gray-300 bg-white ">
               <Editor
+                id="editor-angebot-001"
                 apiKey="c96mccvud9k0kxo3w1d4ascqq2cojwfe0f68k7my1m1te5fc"
                 init={{
                   menubar: 'view edit insert format table',

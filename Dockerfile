@@ -1,5 +1,6 @@
 # Base on offical Node.js Alpine image
 FROM node:alpine
+LABEL MAINTAINER="KlexHub UG & KlexHub, Inc <info@klexhub.com>" 
 
 # Set working directory
 WORKDIR /usr/app
@@ -27,5 +28,6 @@ EXPOSE 3000
 # The node user is provided in the Node.js Alpine base image
 USER node
 
+RUN echo $VERSION
 # Run npm start script with PM2 when container starts
 CMD [ "pm2-runtime", "npm", "--", "start" ]

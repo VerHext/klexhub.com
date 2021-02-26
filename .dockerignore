@@ -1,4 +1,3 @@
-.git/
 .gitignore
 .next/                # Existing Next.js builds
 .dockerignore

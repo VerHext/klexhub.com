@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Router from 'next/router'
 import React from 'react'
 export default function Home() {
   return (
@@ -12,7 +11,7 @@ export default function Home() {
           <div className="col-span-2">
             <h3 className="text-klexp-500 text-xl mb-5 uppercase">Entwicklung</h3>
             <h1 className="text-black text-4xl mb-5">Kundenspezifische Software-Lösungen</h1>
-            <p className="text-black">
+            <p className="text-black pb-5">
               Wir entwickeln kundenspezifische Software – digitale Lösungen, die begeistern. Unsere
               individuellen Anwendungen helfen Unternehmen jeder Größe dabei, ihre Prozesse zu
               vereinfachen oder ausgefallene digitale Kommunikationsideen erlebbar zu machen.
@@ -24,14 +23,14 @@ export default function Home() {
               <br />
               Fordern Sie Ihr unverbindliches Angebot an.
             </p>
-            <button
-              onClick={() => {
-                Router.push({ pathname: '/angebot' }, '/angebot')
-              }}
-              className="rounded-sm text-white bg-klexp-500 px-4 py-2 my-3 hover:bg-klexp-600 focus:outline-none"
-            >
-              Angebot anfordern
-            </button>
+            <Link href="/angebot">
+              <a
+                href="/angebot"
+                className="rounded-sm text-white bg-klexp-500 px-6 py-3 hover:bg-klexp-600 focus:outline-none"
+              >
+                Angebot anfordern
+              </a>
+            </Link>
           </div>
           <div className="col-start-4">
             <img
