@@ -156,12 +156,12 @@ export default function Angebot() {
             />
 
             <div className="py-8">
-              <button
+              <a
                 onClick={onSubmit}
-                className="mt-5 mb-8 float-right rounded-sm text-white bg-klexp-500 px-4 py-2  hover:bg-klexp-600 focus:outline-none"
+                className="cursor-pointer mt-5 mb-8 float-right rounded-sm text-white bg-klexp-500 px-4 py-2  hover:bg-klexp-600 focus:outline-none"
               >
                 Angebot absenden!
-              </button>
+              </a>
             </div>
           </section>
         </div>
