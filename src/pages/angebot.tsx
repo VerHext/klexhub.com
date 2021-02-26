@@ -1,4 +1,3 @@
-import { Editor } from '@tinymce/tinymce-react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import 'suneditor/dist/css/suneditor.min.css' // Import Sun Editor's CSS File
@@ -148,8 +147,31 @@ export default function Angebot() {
             <div className="formItem py-3"></div>
             <label>Projektbeschreibung</label>
 
-            <div className="border border-gray-300 bg-white ">
-              <Editor
+            <textarea
+              onChange={(e) => setData({ ...data, description_project: e?.target?.value })}
+              placeholder="Beschreiben Sie Ihr Projekt..."
+              cols={40}
+              rows={5}
+              className="px-3 py-3 border border-gray-300 bg-white text-sm outline-none focus:outline-none focus:shadow-outline w-full"
+            />
+
+            <div className="py-8">
+              <button
+                onClick={onSubmit}
+                className="mt-5 mb-8 float-right rounded-sm text-white bg-klexp-500 px-4 py-2  hover:bg-klexp-600 focus:outline-none"
+              >
+                Angebot absenden!
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/**
+ *  <Editor
                 id="editor-angebot-001"
                 apiKey="c96mccvud9k0kxo3w1d4ascqq2cojwfe0f68k7my1m1te5fc"
                 init={{
@@ -189,18 +211,4 @@ export default function Angebot() {
                 }}
                 onEditorChange={(e, d) => setData({ ...data, description_project: e })}
               />
-            </div>
-            <div className="py-8">
-              <button
-                onClick={onSubmit}
-                className="mt-5 mb-8 float-right rounded-sm text-white bg-klexp-500 px-4 py-2  hover:bg-klexp-600 focus:outline-none"
-              >
-                Angebot absenden!
-              </button>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  )
-}
+ */
