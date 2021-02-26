@@ -18,14 +18,15 @@ export default function Home() {
               vereinfachen oder ausgefallene digitale Kommunikationsideen erlebbar zu machen.
               <br />
               <br />
-  Durch Einsatz neuster Technologie sind Sie nicht nur up-to-date, sondern auch Ihrer Konkurrenz einen Schritt voraus.
+              Durch Einsatz neuster Technologie sind Sie nicht nur up-to-date, sondern auch Ihrer
+              Konkurrenz einen Schritt voraus.
               <br />
               <br />
               Fordern Sie Ihr unverbindliches Angebot an.
             </p>
             <button
               onClick={() => {
-                Router.push('/angebot')
+                Router.push({ pathname: '/angebot' }, '/angebot')
               }}
               className="rounded-sm text-white bg-klexp-500 px-4 py-2 my-3 hover:bg-klexp-600 focus:outline-none"
             >
