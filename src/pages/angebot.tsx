@@ -1,5 +1,6 @@
 import { Editor } from '@tinymce/tinymce-react'
 import axios from 'axios'
+import { Title } from 'components/Title'
 import React, { useEffect, useState } from 'react'
 import 'suneditor/dist/css/suneditor.min.css' // Import Sun Editor's CSS File
 import { validateEmail } from 'utils/validate'
@@ -77,6 +78,7 @@ export default function Angebot() {
 
   return (
     <div>
+      <Title suffix="KlexHub">{'Angebot'}</Title>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-12 pt-12 text-klexs-500">
         <h1 className="font-bold text-2xl text-klexs-500">Angebot</h1>
         <p className=" py-6">

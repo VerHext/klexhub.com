@@ -1,8 +1,10 @@
+import { Title } from 'components/Title'
 import Link from 'next/link'
 import React from 'react'
 export default function Home() {
   return (
     <>
+      <Title suffix="KlexHub">{'Software Entwicklung'}</Title>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <section
           className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-2  py-20"
@@ -31,6 +33,9 @@ export default function Home() {
                 Angebot anfordern
               </a>
             </Link>
+            <a href="tel:04982257989000" className="text-klexp-500  px-6 py-3  focus:outline-none">
+              +49 (0) 8225 79 89 000
+            </a>
           </div>
           <div className="col-start-4">
             <img
