@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Title suffix="KlexHub">{'Software Entwicklung'}</Title>
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-7xl  mx-4 md:mx-auto px-2 sm:px-6 lg:px-8 ">
         <section
           className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-2  py-20"
           id="welcome-section"
@@ -33,11 +33,14 @@ export default function Home() {
                 Angebot anfordern
               </a>
             </Link>
-            <a href="tel:04982257989000" className="text-klexp-500  px-6 py-3  focus:outline-none">
+            <a
+              href="tel:04982257989000"
+              className="text-klexp-500  px-6 py-3 focus:outline-none hidden md:inline"
+            >
               +49 (0) 8225 79 89 000
             </a>
           </div>
-          <div className="col-start-4">
+          <div className="col-start-4 hidden md:block">
             <img
               className=""
               src="https://www.redhat.com/cms/managed-files/isometric_ansible.svg"
@@ -50,7 +53,7 @@ export default function Home() {
 
         <section id="welcome-section" className="pb-20">
           <div className="grid grid-cols-5">
-            <div className="col-start-3 col-span-2">
+            <div className="md:col-start-3 col-span-5 md:col-span-2">
               <h3 className="text-klexp-500 text-xl mb-5 uppercase">1. Angebot</h3>
               <h1 className="text-black text-4xl mb-5">Ihr Projekt, unser Angebot!</h1>
               <p className="text-black">
@@ -66,10 +69,11 @@ export default function Home() {
                   </a>
                 </Link>
               </p>
+              <div className="pb-10 border-b border-gray-200 mb-10 py-4 md:hidden"></div>
             </div>
           </div>
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2  ">
-            <div className="mt-12 ml-12" style={{ marginTop: '36rem' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-3  ">
+            <div className="md:mt-144 md:ml-12">
               <h3 className="text-klexp-500 text-xl mb-5 uppercase">2. Auftragserteilung</h3>
               <h1 className="text-black text-4xl mb-5">Ihre Starterlaubnis!</h1>
               <p className="text-black">
@@ -88,11 +92,12 @@ export default function Home() {
                   </a>
                 </Link>
               </p>
+              <div className="pb-10 border-b border-gray-200 mb-10 py-4 md:hidden"></div>
             </div>
-            <div className="col-start-2">
+            <div className="col-start-2 hidden md:block">
               <img style={{ height: '140rem' }} src="/path34.png" />
             </div>
-            <div className="mt-12 ml-12">
+            <div className="mt-4 md:mt-12 md:ml-12">
               <h3 className="text-klexp-500 text-xl mb-5 uppercase">1. Beratung</h3>
               <h1 className="text-black text-4xl mb-5">Wir beraten Sie gerne!</h1>
               <p className="text-black">
@@ -112,7 +117,8 @@ export default function Home() {
                   </a>
                 </Link>
               </p>
-              <div className="mt-12 ml-12" style={{ marginTop: '48rem' }}>
+              <div className="pb-10 border-b border-gray-200 mb-10 py-4 md:hidden"></div>
+              <div className="mt-4 md:mt-188 md:ml-12">
                 <h3 className="text-klexp-500 text-xl mb-5 uppercase">4. Entwicklung</h3>
                 <h1 className="text-black text-4xl mb-5">Let`s hacking!</h1>
                 <p className="text-black">
@@ -132,11 +138,12 @@ export default function Home() {
                     </a>
                   </Link>
                 </p>
+                <div className="pb-10 border-b border-gray-200 mb-10 py-4 md:hidden"></div>
               </div>
             </div>
           </div>
           <div className="grid grid-cols-5">
-            <div className="col-start-2 col-span-3">
+            <div className="md:col-start-2 col-span-5 md:col-span-3">
               <h3 className="text-klexp-500 text-xl mb-5 uppercase">5. Fertigstellung</h3>
               <h1 className="text-black text-4xl mb-5">Hey, Fertig!</h1>
               <p className="text-black">

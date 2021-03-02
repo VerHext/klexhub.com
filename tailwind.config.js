@@ -188,6 +188,8 @@ module.exports = {
         '15px': '0.9375rem',
         '23px': '1.4375rem',
         full: '100%',
+        144: '36rem',
+        188: '48rem',
       },
       width: {
         xl: '36rem',

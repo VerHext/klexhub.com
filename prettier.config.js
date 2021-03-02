@@ -6,7 +6,7 @@ module.exports = {
   arrowParens: 'always',
   tabWidth: 2,
   useTabs: false,
-  quoteProps: 'as-needed',
+  quoteProps: 'preserve',
   jsxSingleQuote: false,
   bracketSpacing: true,
   jsxBracketSameLine: false,
