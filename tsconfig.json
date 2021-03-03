@@ -23,5 +23,5 @@
     "next.config.js",
     "src/components/ClassTable.jsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "angebot-worker"]
 }
