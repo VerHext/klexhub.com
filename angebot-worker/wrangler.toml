@@ -1,0 +1,7 @@
+name = "angebot-worker"
+type = "webpack"
+account_id = "070791994fb01ff03966a2811756bd29"
+workers_dev = true
+route = "klexhub.com/api/angebot"
+zone_id = "09b262505a75ee4ae95ddcb858a56adf"
+webpack_config = "webpack.config.js"

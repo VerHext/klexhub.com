@@ -66,7 +66,8 @@
     "suneditor-react": "^2.15.2",
     "tailwindcss": "^2.0.2",
     "tinytime": "^0.2.6",
-    "unist-util-visit": "^2.0.3"
+    "unist-util-visit": "^2.0.3",
+    "wrangler": "0.0.2"
   },
   "devDependencies": {
     "@beyonk/gdpr-cookie-consent-banner": "^7.1.1",
