@@ -67,7 +67,10 @@ export default function Angebot() {
     }
 
     //Send form to backend.
-    axios.post('/api/angebot', d).then(console.log).catch(console.error)
+    axios
+      .post('https://website-api.klexhub.com/api/angebot', d)
+      .then(console.log)
+      .catch(console.error)
 
     setError({
       error: false,
