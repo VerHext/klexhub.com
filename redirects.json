@@ -10,6 +10,11 @@
     "permanent": true
   },
   {
+    "source": "/widerrufsrecht",
+    "destination": "/legal/widerrufsrecht",
+    "permanent": true
+  },
+  {
     "source": "/datenschutz",
     "destination": "/legal/datenschutz",
     "permanent": true
