@@ -2,12 +2,17 @@
   {
     "source": "/impressum",
     "destination": "/legal/impressum",
-    "permanent": false
+    "permanent": true
+  },
+  {
+    "source": "/agb",
+    "destination": "/legal/agb",
+    "permanent": true
   },
   {
     "source": "/datenschutz",
     "destination": "/legal/datenschutz",
-    "permanent": false
+    "permanent": true
   },
   {
     "source": "/wp-admin",

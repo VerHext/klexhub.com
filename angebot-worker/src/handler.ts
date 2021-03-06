@@ -44,12 +44,21 @@ export async function handleRequest(req: Request): Promise<Response> {
 
     return new Response('Created! Yeah!', { status: 200 })
   }
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
+    'Access-Control-Max-Age': '86400',
+    'Access-Control-Allow-Headers': '*',
+  }
 
   let response
   if (req.method === 'POST') {
     response = await create_new_angebot()
   } else {
-    response = new Response('Expected POST', { status: 500 })
+    response = new Response('Expected POST', {
+      status: 200,
+      headers: corsHeaders,
+    })
   }
 
   return response

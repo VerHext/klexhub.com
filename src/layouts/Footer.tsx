@@ -53,6 +53,7 @@ const footerNav = {
     items: [
       { title: 'Impressum', href: '/legal/impressum' },
       { title: 'Datenschutzerklärung', href: '/legal/datenschutz' },
+      { title: 'AGB', href: '/legal/agb' },
       { title: 'Branding', href: '/branding' },
     ],
   },
