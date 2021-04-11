@@ -43,7 +43,7 @@ export default function App({ Component, pageProps, router }) {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="software, entwicklung, jettingen, softwareunternehmen, code, website, klexhub, support-pp, development"
+          content="software, entwicklung, jettingen, softwareunternehmen, code, webseite, klexhub, support-pp, development, burgau, günzburg, leipheim, scheppach, jettingen-scheppach, EDV-Service, LAN, WLAN, IT-Planung, Internetservice, server, react, spring-boot, server, cloud, github, git, hardware "
         />
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta key="twitter:site" name="twitter:site" content="@KlexHub" />
